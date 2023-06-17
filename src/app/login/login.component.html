@@ -1,1 +1,43 @@
-<p>login works!</p>
+<div id="frame">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>سیستم سامانه سفارش غذا</mat-card-title>
+      <mat-card-subtitle>نوین فود</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="../../assets/Images/images.jfif" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+    </mat-card-content>
+    <form class="login-form">
+      <mat-form-field class="login-full-width">
+        <mat-label>نام کاربری</mat-label>
+        <input type="text" matInput [formControl]="Username" placeholder="Username">
+        <mat-hint>حتما نام کابری وارد شود</mat-hint>
+        <mat-error *ngIf="Username .hasError('required')">
+          نام کاربری غلط است
+        </mat-error>
+        <mat-error *ngIf="Username.hasError('minlength')">
+          نام کاربری حداقل باید ۴ حرف باشد
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <br>
+    <form class="login-form">
+      <mat-form-field class="login-full-width">
+        <mat-label>رمزعبور </mat-label>
+        <input type="text" matInput [formControl]="Password" placeholder="Password">
+        <mat-hint>حتمارمزعبور وارد شود</mat-hint>
+        <mat-error *ngIf="Password .hasError('required')">
+          رمزعبور غلط است
+        </mat-error>
+        <mat-error *ngIf="Password.hasError('minlength')">
+          رمزعبور حداقل باید 8 حرف باشد
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <mat-card-actions>
+      <button (click)="login()" [disabled]="Username.invalid || Password.invalid" mat-raised-button color="primary">ورود</button>&nbsp;
+      <button mat-raised-button color="accent">ثبت نام</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -17,7 +17,7 @@
           نام کاربری غلط است
         </mat-error>
         <mat-error *ngIf="Username.hasError('minlength')">
-          نام کاربری حداقل باید ۴ حرف باشد
+          نام کاربری حداقل باید4 حرف باشد
         </mat-error>
       </mat-form-field>
     </form>
@@ -37,7 +37,7 @@
     </form>
     <mat-card-actions>
       <button (click)="login()" [disabled]="Username.invalid || Password.invalid" mat-raised-button color="primary">ورود</button>&nbsp;
-      <button mat-raised-button color="accent">ثبت نام</button>
+      <button mat-raised-button color="accent"><a href="../../app/register/register.component.html">ثبت نام</a></button>
     </mat-card-actions>
   </mat-card>
 </div>

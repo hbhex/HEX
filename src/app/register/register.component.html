@@ -1,2 +1,64 @@
-
-<p>register works!</p>
+<div id="register">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>سامانه ثبت سرویس غذا</mat-card-title>
+      <mat-card-subtitle>نوین فود</mat-card-subtitle>
+    </mat-card-header>
+    <!-- <img mat-card-image src="../../assets/Images/images.jfif" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+      <form class="register-form">
+        <mat-form-field class="register-full-width">
+          <mat-label>نام نام خانوادگی</mat-label>
+          <input type="text" matInput [formControl]="Username" placeholder="علی کریمی">
+          <mat-hint>حتما نام نام خانوادگی وارد شود</mat-hint>
+          <mat-error *ngIf="Username.hasError('minlength')">
+            نام کاربری حداقل باید4 حرف باشد
+          </mat-error>
+        </mat-form-field>
+      </form>
+      <br>
+      <form class="register-form">
+        <mat-form-field class="register-full-width">
+          <mat-label>ایمیل</mat-label>
+          <input type="text" matInput [formControl]="email" placeholder="Hoseinbigomjany@gmail.com">
+          <mat-hint>حتماایمیل وارد شود</mat-hint>
+          <mat-error *ngIf="email .hasError('required')">
+            ایمیل به صورت صحیح وارد نشده است
+          </mat-error>
+        </mat-form-field>
+      </form>
+      <br>
+      <form class="register-form">
+        <mat-form-field class="register-full-width">
+          <mat-label>نام کاربری</mat-label>
+          <input type="text" matInput [formControl]="Username" placeholder="Username">
+          <mat-hint>حتما نام کابری وارد شود</mat-hint>
+          <mat-error *ngIf="Username .hasError('required')">
+            نام کاربری غلط است
+          </mat-error>
+          <mat-error *ngIf="Username.hasError('minlength')">
+            نام کاربری حداقل باید4 حرف باشد
+          </mat-error>
+        </mat-form-field>
+      </form>
+      <br>
+      <form class="register-form">
+        <mat-form-field class="register-full-width">
+          <mat-label>رمزعبور </mat-label>
+          <input type="text" matInput [formControl]="Password" placeholder="Password">
+          <mat-hint>حتمارمزعبور وارد شود</mat-hint>
+          <mat-error *ngIf="Password .hasError('required')">
+            رمزعبور غلط است
+          </mat-error>
+          <mat-error *ngIf="Password.hasError('minlength')">
+            رمزعبور حداقل باید 8 حرف باشد
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="but" mat-button mat-raised-button color="accent" (click)="login()" [disabled]="Username.invalid || email.invalid" >ثبت نام</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

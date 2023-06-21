@@ -1,0 +1,29 @@
+#register{
+  height: 100vh;
+  background-color: rgb(186, 187, 187);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-card {
+  max-width: 450px;
+}
+
+.example-header-image {
+  padding:10px;
+  background-image: url('../../assets/Images/images.jpg');
+  background-size: cover;
+}
+.but{
+  margin-right: 35%;
+}
+.register-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.register-full-width {
+  width: 100%;
+}
